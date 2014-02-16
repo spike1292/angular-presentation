@@ -666,13 +666,6 @@
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-				multiplex: {
-        // Example values. To generate your own, see the socket.io server instructions.
-        secret: '13917641823361260927', // Obtained from the socket.io server. Gives this (the master) control of the presentation
-        id: 'a2b7208111e0b355', // Obtained from socket.io server
-        url: 'http://192.168.19.165:1948' // Location of socket.io server
-    },
-
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
 				// parallaxBackgroundSize: '2100px 900px',
@@ -685,12 +678,6 @@
 					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					//{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-					        { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js', async: true },
-        { src: 'plugin/multiplex/master.js', async: true },
-
-        // and if you want speaker notes
-        //{ src: 'plugin/notes-server/client.js', async: true }
-
 				]
 			});
 		</script>
