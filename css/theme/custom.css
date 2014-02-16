@@ -1,0 +1,49 @@
+.show-off {
+  color: #cb4b16;
+}
+
+.big-input {
+  padding: 6px 10px;
+  font-size: 18px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.big-button {
+  font-size: 18px;
+  padding: 6px;
+  vertical-align: middle;
+}
+
+.big-checkbox {
+  width: 25px;
+  height: 25px;
+}
+
+.done-true {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.mt {
+  margin-top: 40px !important;
+}
+
+.no-bullets {
+  list-style: none !important;
+}
+
+.beer-list {
+  height: 199px;
+  overflow: auto;
+  font-size: .8em !important;
+  text-align: center !important;
+}
+
+.beer-brewery {
+  font-size: .5em !important;
+}
+
+.img {
+  vertical-align: middle !important;
+}

@@ -1,52 +1,52 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-		<title>WebApps with AngularJS</title>
+        <title>WebApps with AngularJS</title>
 
-		<meta name="description" content="WebApps with AngularJS">
-		<meta name="author" content="Henk Bakker">
+        <meta name="description" content="WebApps with AngularJS">
+        <meta name="author" content="Henk Bakker">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
-		<link rel="stylesheet" href="css/theme/custom.css">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+        <link rel="stylesheet" href="css/theme/custom.css">
 
-		<link rel="stylesheet" href="lib/css/solarized_dark.css">
+        <link rel="stylesheet" href="lib/css/solarized_dark.css">
 
     <script src="examples/js/angular.min.js"></script>
 
-		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+        <script>
+            document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-	<body>
+    <body>
 
-		<div class="reveal">
-			<div class="slides">
-				<section>
+        <div class="reveal">
+            <div class="slides">
+                <section>
           <h1>WebApps with <span class="show-off">AngularJS</span></h1>
           <h3>An overview of the framework</h3>
           <p>
             <img src="examples/assets/angularjs.png">
           </p>
-					<p>
-						<small>
+                    <p>
+                        <small>
              Henk Bakker
             </small>
-					</p>
-				</section>
+                    </p>
+                </section>
 
         <section>
           <h2>What is <span class="show-off">AngularJS</span></h2>
@@ -131,10 +131,10 @@
   &lt;/form&gt;
             </code></pre>
           </div>
-				</section>
+                </section>
 
         <section>
-					<h2>Controllers</h2>
+                    <h2>Controllers</h2>
           <p>The controller is a function that augment the <span class="show-off">$scope</span> object.<br>
           It's used to add a value or to add a behavior to the <span class="show-off">$scope</span>.</p>
 
@@ -151,7 +151,7 @@
       };
     };
           </code></pre>
-				</section>
+                </section>
 
         <section>
           <h2>Templates</h2>
@@ -174,7 +174,7 @@
       &lt;/div&gt;
             </code></pre>
           </div>
-				</section>
+                </section>
 
         <section>
           <h2>Result</h2>
@@ -215,20 +215,20 @@
               </div>
             </body>
           </html>
-				</section>
+                </section>
 
-				<section>
-					<section>
+                <section>
+                    <section>
           <h2>One-Way data binding</h2>
           <p>Most templating systems bind data in only one direction: they merge template and model components together into a view</p>
-				  <img class="fragment img" height="400" src="examples/assets/one-way-db.png">
-				 
+                  <img class="fragment img" height="400" src="examples/assets/one-way-db.png">
+                 
         </section>
         <section>
           <h2>Two-Way data binding</h2>
           <p>Two-way data binding is the automatic synchronization <br>of data between the model and view.</p>
-				  
-				  <img class="fragment img"  height="400" src="examples/assets/two-way-db.png">
+                  
+                  <img class="fragment img"  height="400" src="examples/assets/two-way-db.png">
         </section>
         </section>
 <section>
@@ -311,7 +311,7 @@
             <li>$timeout</li>
             <li>$filter</li>
           </ul>
-				</section>
+                </section>
 <section>
         <section>
           <h2>$http</h2>
@@ -326,7 +326,7 @@
       .success(successCallback)
       .error(errorCallback);
           </code></pre>
-				</section>
+                </section>
 
         <section>
           <h3>$http - example</h3>
@@ -353,7 +353,7 @@
       &lt;button ng-click="makeRequest()"&gt;Get beers&lt;/button&gt;
     &lt;/div&gt;
           </code></pre>
-				</section>
+                </section>
 
         <section>
           <h2>$http - Result</h2>
@@ -390,8 +390,8 @@
               </body>
             </html>
           </div>
-				</section>
-				</section>
+                </section>
+                </section>
 
         <section>
           <h2>Modules</h2>
@@ -410,10 +410,10 @@
       ...
     &lt;/html&gt;
           </code></pre>
-				</section>
+                </section>
 
         <section>
-					<h2>Routing</h2>
+                    <h2>Routing</h2>
           <p>In a more complex app you can use the <i class="show-off">$routeProvider</i> service, to define which <i>controller</i> and <i>template</i> will be loaded in each <i>path</i>.</p>
           <pre class="fragment" ng-non-bindable><code>
   var app = angular.module('myApp');
@@ -432,18 +432,18 @@
       .otherwise({ redirectTo : '/' });
     });
           </code></pre>
-				</section>
+                </section>
 
 
         <section>
-    	<section>
+        <section>
           <h2>Directives</h2>
           <blockquote>"Teach new tricks to the HTML"</blockquote>
           <ol class="mt fragment">
             <li>Create custom attributes</li>
             <li>Create custom HTML tags<br/><small>(based on W3C <i class="show-off">webcomponents</i> specification)</small></li>
           </ol>
-				</section>
+                </section>
 
         <section>
           <h2>Directives <small>2</small></h2>
@@ -457,7 +457,7 @@
             <li>ng-view</li>
             <li>...</li>
           </ul>
-				</section>
+                </section>
 
         <section>
           <h2>Directives <small>3</small></h2>
@@ -477,7 +477,7 @@
         &lt;/body&gt;
       &lt;/html&gt;
           </code></pre>
-				</section>
+                </section>
 
         <section>
           <h2>Directives <small>4</small></h2>
@@ -496,7 +496,7 @@
               <strong>comment</strong>: <span class="show-off">&lt;!-- directive: my-directive value --&gt;<span class="show-off">
             </li>
           </ul>
-				</section>
+                </section>
 
         <section>
           <h2>Directives <small>5</small></h2>
@@ -598,33 +598,30 @@
           </code></pre>
         </section>
         <section>
-	        <section>
+            <section>
 
-	        	<h1>DEMO TIME</h1>
+                <h1>DEMO TIME</h1>
 
-	        </section>
+            </section>
 
-	        <section>
-	        	<h2>JukeTube</h2>
-	        	<img class="img" src="examples/assets/juketube.png" height="400">
-            <p><a href="http://jgthms.com/juketube/">Demo</a> | <a href="https://github.com/jgthms/juketube">Source</a></p>
-	        </section>
-	        <section>
-	        	<h2>jHipster</h2>
-	        	<img  class="img" src="examples/assets/screenshot_1.png" height="400">
-            <p><a href="http://jhipster.github.io/">Homepage</a></p>
-	        </section>
-	        <section>
-	        	<h2>Ionic</h2>
-	        	<img class="img" src="examples/assets/phones-weather-demo@2x.png" height="400">
-            <p><a href="http://ionicframework.com/">Homepage</a></p>
-	        </section>
+            <section>
+                <h2>JukeTube</h2>
+                <img class="img" src="examples/assets/juketube.png" height="400">
+            </section>
+            <section>
+                <h2>jHipster</h2>
+                <img  class="img" src="examples/assets/screenshot_1.png" height="400">
+            </section>
+            <section>
+                <h2>Ionic</h2>
+                <img class="img" src="examples/assets/phones-weather-demo@2x.png" height="400">
+            </section>
         </section>
 
         <section>
 
 <section>
-					<h2>Learn</h2>
+                    <h2>Learn</h2>
           <ul>
             <li>Thinkster     - <a href="http://www.thinkster.io/pick/GtaQ0oMGIl/a-better-way-to-learn-angularjs" target="_blank">http://thinkster.io/</a></li>
             <li>Year of Moo - <a href="http://www.yearofmoo.com/" target="_blank">http://www.yearofmoo.com/</a></li>
@@ -632,8 +629,8 @@
             <li>TodoMVC       - <a href="http://todomvc.com/" target="_blank">http://todomvc.com/</a></li>
           </ul>
           </section>
-        	<section>
-					<h2>References</h2>
+            <section>
+                    <h2>References</h2>
           <ul>
             <li>Angular - <a href="http://angularjs.org/" target="_blank">http://angularjs.org/</a></li>
             <li>Karma   - <a href="http://karma-runner.github.io/" target="_blank">http://karma-runner.github.io/</a></li>
@@ -644,55 +641,55 @@
         </section>
 
         <section>
-					<h1>The End</h1>
-          			<h2>Henk Bakker</h2>
-				</section>
-			</div>
-		</div>
+                    <h1>The End</h1>
+                    <h2>Henk Bakker</h2>
+                </section>
+            </div>
+        </div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
 
-		<script>
+        <script>
 
-						// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+                        // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: false,
+                progress: false,
+                history: true,
+                center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-				multiplex: {
+                multiplex: {
         // Example values. To generate your own, see the socket.io server instructions.
-        secret: '13917641823361260927', // Obtained from the socket.io server. Gives this (the master) control of the presentation
+        secret: null, // Obtained from the socket.io server. Gives this (the master) control of the presentation
         id: 'a2b7208111e0b355', // Obtained from socket.io server
         url: 'http://192.168.19.165:1948' // Location of socket.io server
     },
 
-				// Parallax scrolling
-				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-				// parallaxBackgroundSize: '2100px 900px',
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					//{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					//{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					//{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
-					        { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js', async: true },
-        { src: 'plugin/multiplex/master.js', async: true },
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    //{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    //{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    //{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                            { src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.10/socket.io.min.js', async: true },
+        { src: 'plugin/multiplex/client.js', async: true },
 
         // and if you want speaker notes
         //{ src: 'plugin/notes-server/client.js', async: true }
 
-				]
-			});
-		</script>
-	</body>
+                ]
+            });
+        </script>
+    </body>
 </html>

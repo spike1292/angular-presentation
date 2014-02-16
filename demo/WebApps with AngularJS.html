@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://vitorleal.github.io/angularjs-talk/#/27 -->
+<html lang="pt-BR" ng-app="" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+
+		<title>WebApps with AngularJS</title>
+
+		<meta name="description" content="WebApps with AngularJS">
+		<meta name="author" content="Vitor Leal">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="http://vitorleal.github.io/angularjs-talk/css/reveal.min.css">
+		<link rel="stylesheet" href="http://vitorleal.github.io/angularjs-talk/css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="http://vitorleal.github.io/angularjs-talk/css/theme/custom.css">
+
+		<link rel="stylesheet" href="http://vitorleal.github.io/angularjs-talk/lib/css/zenburn.css">
+
+    <script src="./WebApps with AngularJS_files/angular.min.js"></script><style type="text/css"></style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak{display:none;}ng\:form{display:block;}</style>
+
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script><link rel="stylesheet" href="./WebApps with AngularJS_files/paper.css" type="text/css" media="print">
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body class="mt" style="-webkit-transition: -webkit-transform 0.8s ease; transition: -webkit-transform 0.8s ease;">
+
+		<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+			<div class="slides" style="width: 960px; height: 700px; zoom: 0.45128571428571423;">
+				<section style="top: -309px; display: block;" class="past" hidden="">
+          <h1>WebApps with <span class="show-off">AngularJS</span></h1>
+          <h3>An overview of the framework</h3>
+          <p>
+            <img src="./WebApps with AngularJS_files/angularjs.png">
+          </p>
+					<p>
+						<small>
+              <a href="http://vitorleal.com/" target="_blank">Vitor Leal</a> - Telefonica Brazil
+            </small>
+					</p>
+				</section>
+
+        <section style="top: -129.5px; display: block;" class="past" hidden="">
+          <h2>What is <span class="show-off">AngularJS</span></h2>
+          <p>It's a structural framework for dynamic web apps<br> that's easy to maintain, in a fast and testable way.</p>
+        </section>
+
+        <section style="top: -165.5px; display: none;" class="past" hidden="">
+          <h2>The principles</h2>
+          <ul class="fragment visible" data-fragment-index="0">
+            <li>Rapid development</li>
+            <li>Modularity</li>
+            <li>Built to be testable</li>
+            <li>Write less code</li>
+          </ul>
+        </section>
+
+        <section style="top: -207px; display: none;" class="past" hidden="">
+          <h2>What it offers us</h2>
+          <ul class="fragment visible" data-fragment-index="0">
+            <li>Controllers</li>
+            <li>Templates</li>
+            <li>Two-Way data bindings</li>
+            <li>Services</li>
+            <li>Directives</li>
+            <li>Dependency Injection</li>
+          </ul>
+        </section>
+
+        <section style="top: -350px; display: none;" class="past" hidden="">
+          <h2>The simplest example</h2>
+          <pre ng-non-bindable=""><code class="xml">
+    <span class="doctype">&lt;!DOCTYPE html&gt;</span>
+    <span class="tag">&lt;<span class="title">html</span> <span class="attribute">ng-app</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"js/angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">form</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">label</span>&gt;</span>Your name?<span class="tag">&lt;/<span class="title">label</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">ng-model</span>=<span class="value">"name"</span> <span class="attribute">placeholder</span>=<span class="value">"Your name?"</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h3</span>&gt;</span>My name is {{ name }}!<span class="tag">&lt;/<span class="title">h3</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+          </code></pre>
+
+          <div class="hide-in-print mt fragment visible" data-fragment-index="0">
+            <hr>
+            
+            
+              
+                <form class="ng-pristine ng-valid">
+                  <label>What's your name?</label>
+                  <input class="big-input ng-pristine ng-valid" type="text" ng-model="name" placeholder="What&#39;s your name?">
+                </form>
+                <h3 class="mt">My name is <span class="show-off ng-binding"></span>!</h3>
+              
+            
+          </div>
+        </section>
+
+        <section style="top: -350px; display: none;" class="past" hidden="">
+          <h2>$scope</h2>
+          <p><span class="show-off">$scope</span> is an object that refers to the application model.<br> It connects the <strong>View</strong> and the <strong>Controller</strong></p>
+
+          <div class="fragment visible" data-fragment-index="0">
+            <p class="mt">
+              myController.js
+            </p>
+            <pre><code class="php">
+  <span class="function"><span class="keyword">function</span> <span class="title">MyController</span><span class="params">(<span class="variable">$scope</span>)</span> {</span>
+    <span class="variable">$scope</span>.name = <span class="string">'Vitor Leal'</span>;
+  }
+            </code></pre>
+
+            <p class="mt">
+              myView.html
+            </p>
+            <pre ng-non-bindable=""><code class="xml">
+  <span class="tag">&lt;<span class="title">form</span> <span class="attribute">ng-controller</span>=<span class="value">"MyController"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">ng-model</span>=<span class="value">"name"</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+            </code></pre>
+          </div>
+				</section>
+
+        <section style="top: -310.5px; display: none;" class="past" hidden="">
+					<h2>Controllers</h2>
+          <p>The controller is a function that augment the <span class="show-off">$scope</span> object.<br>
+          It's used to add a value or to add a behavior to the <span class="show-off">$scope</span>.</p>
+
+          <pre ng-non-bindable="" class="mt fragment visible" data-fragment-index="0"><code class="php">
+    <span class="function"><span class="keyword">function</span> <span class="title">TodoCtrl</span><span class="params">(<span class="variable">$scope</span>)</span> {</span>
+      <span class="variable">$scope</span>.todos = [
+        { text: <span class="string">'Learn AngularJS'</span>, done: <span class="keyword">true</span>  },
+        { text: <span class="string">'Create an App'</span>,   done: <span class="keyword">false</span> }
+      ];
+
+      <span class="variable">$scope</span>.addTodo = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+        <span class="variable">$scope</span>.todos.push({ text: <span class="variable">$scope</span>.todoText, done: <span class="keyword">false</span> });
+        <span class="variable">$scope</span>.todoText = <span class="string">''</span>;
+      };
+    };
+          </code></pre>
+				</section>
+
+        <section style="top: -322.5px; display: none;" class="past" hidden="">
+          <h2>Templates</h2>
+          <p>The templates are simply <span class="show-off">HTML5</span>.<br>
+          All the presentation logic of the app must be in there.</p>
+
+          <div class="fragment mt visible" data-fragment-index="0">
+            <pre ng-non-bindable=""><code class="xml">
+      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"TodoCtrl"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">li</span> <span class="attribute">ng-repeat</span>=<span class="value">"todo in todos"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"checkbox"</span> <span class="attribute">ng-model</span>=<span class="value">"todo.done"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">span</span>&gt;</span>{{ todo.text }}<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">form</span> <span class="attribute">ng-submit</span>=<span class="value">"addTodo()"</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">ng-model</span>=<span class="value">"todoText"</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">button</span> <span class="attribute">type</span>=<span class="value">"submit"</span>&gt;</span>Add<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+            </code></pre>
+          </div>
+				</section>
+
+        <section style="top: -209px; display: none;" class="past" hidden="">
+          <h2>Result</h2>
+
+          
+          
+            
+              <script>
+                function TodoCtrl($scope) {
+                  $scope.todos = [
+                    { text: 'Learn AngularJS', done: true },
+                    { text: 'Create an App', done: false }
+                  ];
+
+                  $scope.addTodo = function () {
+                    if ($scope.todoText) {
+                      $scope.todos.push({ text: $scope.todoText, done: false });
+                      $scope.todoText = '';
+                    }
+                  };
+                };
+              </script>
+
+              <div class="mt ng-scope" ng-controller="TodoCtrl">
+                <ul class="no-bullets">
+                  <!-- ngRepeat: todo in todos --><li ng-repeat="todo in todos" class="ng-scope">
+                    <label>
+                      <input type="checkbox" ng-model="todo.done" class="big-checkbox ng-pristine ng-valid">
+                      <span class="done-true">Learn AngularJS</span>
+                    </label>
+                  </li><li ng-repeat="todo in todos" class="ng-scope">
+                    <label>
+                      <input type="checkbox" ng-model="todo.done" class="big-checkbox ng-pristine ng-valid">
+                      <span class="done-false">Create an App</span>
+                    </label>
+                  </li>
+                </ul>
+                <form class="mt ng-pristine ng-valid" ng-submit="addTodo()">
+                  <input placeholder="add new task" class="big-input ng-pristine ng-valid" type="text" ng-model="todoText">
+                  <button class="big-button" type="submit">Add</button>
+                </form>
+                <small class="fragment mt ng-binding visible" data-fragment-index="0">[
+  {
+    "text": "Learn AngularJS",
+    "done": true
+  },
+  {
+    "text": "Create an App",
+    "done": false
+  }
+]</small>
+              </div>
+            
+          
+				</section>
+
+        <section style="top: -293.5px; display: none;" class="past" hidden="">
+          <h2>Two-Way data binding</h2>
+          <p>Two-way data binding is the automatic synchronization <br>of data between the model and view.</p>
+				  <img class="fragment img visible" src="./WebApps with AngularJS_files/One_Way_Data_Binding.png" data-fragment-index="0">
+				  <img class="fragment img visible" src="./WebApps with AngularJS_files/Two_Way_Data_Binding.png" data-fragment-index="1">
+        </section>
+
+        <section style="top: -350px; display: none;" class="past" hidden="">
+          <h2><span class="show-off">$scope</span> inheritance</h2>
+          <p>When a new <span class="show-off">$scope</span> is created, it's added <br>as a children of their parent <span class="show-off">$scope</span>.</p>
+
+          <div class="fragment visible" data-fragment-index="0">
+            <p class="mt">MyControllers.js</p>
+            <pre ng-non-bindable=""><code class="php">
+  <span class="function"><span class="keyword">function</span> <span class="title">ParentController</span><span class="params">(<span class="variable">$scope</span>)</span> {</span>
+    <span class="variable">$scope</span>.person = {
+      name     : <span class="string">'Vitor Leal'</span>,
+      helloText: <span class="string">''</span>
+    };
+  };
+
+  <span class="function"><span class="keyword">function</span> <span class="title">ChildController</span><span class="params">(<span class="variable">$scope</span>)</span> {</span>
+    <span class="variable">$scope</span>.sayHello = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+      <span class="variable">$scope</span>.person.helloText = <span class="string">"Hi "</span> + <span class="variable">$scope</span>.person.name;
+    }
+  };
+            </code></pre>
+          </div>
+        </section>
+
+        <section style="top: -320.5px; display: none;" class="past" hidden="">
+          <h2><span class="show-off">$scope</span> inheritance <small>2</small></h2>
+          <p class="mt">MyView.html</p>
+          <pre ng-non-bindable=""><code class="xml">
+  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"ParentController"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">form</span> <span class="attribute">ng-controller</span>=<span class="value">"ChildController"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">ng-model</span>=<span class="value">"person.name"</span> <span class="attribute">placeholder</span>=<span class="value">"Name"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">button</span> <span class="attribute">ng-click</span>=<span class="value">"sayHello()"</span>&gt;</span>Say hello<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span>{{ person.helloText }}<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          </code></pre>
+
+          <div class="fragment mt visible" data-fragment-index="0">
+            
+            
+              
+                <script>
+                  function ParentController($scope) {
+                    $scope.person = {
+                      name     : 'Vitor Leal',
+                      helloText: ''
+                    };
+                  };
+
+                  function ChildController($scope) {
+                    $scope.sayHello = function () {
+                      $scope.person.helloText = "Hi " + $scope.person.name;
+                    }
+                  };
+                </script>
+              
+              
+                <div ng-controller="ParentController" class="ng-scope">
+                  <form ng-controller="ChildController" class="ng-scope ng-pristine ng-valid">
+                    <input class="big-input ng-pristine ng-valid" type="text" ng-model="person.name" placeholder="Name">
+                    <button class="big-button" ng-click="sayHello()">Say hello</button>
+                  </form>
+                  <p class="mt">person.helloText = <span class="show-off ng-binding"></span></p>
+                </div>
+              
+            
+          </div>
+        </section>
+
+        <section style="top: -231.5px; display: none;" class="past" hidden="">
+          <h2>Services</h2>
+          <p>Injctable objects that carry out specific tasks.<br> Provide a way to separate concerns and re-use code.</p>
+
+          <ul class="mt fragment visible" data-fragment-index="0">
+            <li>$http (ajax)</li>
+            <li>$locale</li>
+            <li>$timeout</li>
+            <li>$filter</li>
+          </ul>
+				</section>
+
+        <section style="top: -268px; display: none;" class="past" hidden="">
+          <h2>$http</h2>
+          <p>The <span class="show-off">$http</span> <i>service</i> makes easier to integration with external APIs.</p>
+          <p>Main methods: .get, .post, .put, .delete, .jsonp</p>
+          <pre class="mt" ng-non-bindable=""><code class="bash">
+    <span class="variable">$http</span>.get(<span class="string">'http://address-of.the/api'</span>)
+      .success(successCallback)
+      .error(errorCallback);
+
+    <span class="variable">$http</span>.post(<span class="string">'http://address-of.the/api'</span>, data)
+      .success(successCallback)
+      .error(errorCallback);
+          </code></pre>
+				</section>
+
+        <section style="top: -350px; display: none;" class="past" hidden="">
+          <h3>$http - example</h3>
+          <pre ng-non-bindable=""><code class="php">
+    <span class="function"><span class="keyword">function</span> <span class="title">BeerController</span><span class="params">(<span class="variable">$scope</span>, <span class="variable">$http</span>)</span> {</span>
+      <span class="variable">$scope</span>.makeRequest = <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+        <span class="variable">$http</span>.jsonp(<span class="string">'http://api.openbeerdatabase.com/v1/beers.json'</span>)
+          .success(<span class="function"><span class="keyword">function</span> <span class="params">(data, status)</span> {</span>
+            <span class="variable">$scope</span>.beers = data.beers;
+          })
+          .error(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+            <span class="variable">$scope</span>.beers = [{ name: <span class="string">"No beer for you :("</span> }]
+          });
+      };
+    };
+          </code></pre>
+          <pre ng-non-bindable=""><code class="xml">
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">ng-controller</span>=<span class="value">"BeerController"</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">ul</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">li</span> <span class="attribute">ng-repeat</span>=<span class="value">"beer in beers | limitTo:15"</span>&gt;</span>
+          {{ beer.name }} - {{ beer.brewery.name }}
+        <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+      <span class="tag">&lt;<span class="title">button</span> <span class="attribute">ng-click</span>=<span class="value">"makeRequest()"</span>&gt;</span>Get beers<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+          </code></pre>
+				</section>
+
+        <section style="top: -242.5px; display: none;" class="past" hidden="">
+          <h2>$http - Result</h2>
+
+          <div class="mt">
+            
+            
+              
+                <script>
+                  function BeersController($scope, $http) {
+                    $scope.makeRequest = function () {
+                      $http.jsonp('http://api.openbeerdatabase.com/v1/beers.json?callback=JSON_CALLBACK')
+                        .success(function (data, status) {
+                            $scope.beers = data.beers;
+                        })
+                        .error(function () {
+                          $scope.beers = [{ name: "No beer for you :(" }]
+                        });
+                    };
+                  };
+                </script>
+                <div ng-controller="BeersController" class="ng-scope">
+                  <ul class="beer-list">
+                    <!-- ngRepeat: beer in beers | limitTo:15 -->
+                  </ul>
+                  <p class="mt">
+                    <button class="big-button" ng-click="makeRequest()">Get beers</button>
+                  </p>
+                </div>
+              
+            
+          </div>
+				</section>
+
+        <section style="top: -324px; display: none;" class="past" hidden="">
+          <h2>Modules</h2>
+          <p>Angular <span class="show-off">modules</span> declaratively specify <br>how an application should be bootstrapped.</p>
+
+          <pre class="mt" ng-non-bindable=""><code class="javascript">
+    <span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, [<span class="string">'third-part-module'</span>]);
+
+    app.config(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span> ... });     <span class="xml"><span class="comment">&lt;!-- Configuration --&gt;</span>
+    app.controller('myController', ...); <span class="comment">&lt;!-- Create a controller --&gt;</span>
+    app.service('myService', ...);       <span class="comment">&lt;!-- Create a service --&gt;</span>
+          </span></code></pre>
+
+          <pre class="mt" ng-non-bindable=""><code class="xml">
+    <span class="tag">&lt;<span class="title">html</span> <span class="attribute">ng-app</span>=<span class="value">"myApp"</span>&gt;</span>
+      ...
+    <span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+          </code></pre>
+				</section>
+
+        <section style="top: -345px; display: none;" class="past" hidden="">
+					<h2>Routing</h2>
+          <p>In a more complex app you can use the <i class="show-off">$routeProvider</i> service, to define which <i>controller</i> and <i>template</i> will be loaded in each <i>path</i>.</p>
+          <pre class="fragment visible" ng-non-bindable="" data-fragment-index="0"><code class="ruby">
+  var app = angular.<span class="keyword">module</span>(<span class="string">'myApp'</span>);
+
+  app.config(function (<span class="variable">$routeProvider</span>) {
+    <span class="variable">$routeProvider</span>
+      .<span class="keyword">when</span>(<span class="string">'/'</span>, {
+        controller <span class="symbol">:<span class="string">'mainController'</span></span>, templateUrl <span class="symbol">:<span class="string">'/views/index.html'</span></span>
+      })
+      .<span class="keyword">when</span>(<span class="string">'/newPost/'</span>, {
+        controller <span class="symbol">:<span class="string">'newPostController'</span></span>, templateUrl <span class="symbol">:<span class="string">'/views/newPost.html'</span></span>
+      })
+      .<span class="keyword">when</span>(<span class="string">'/posts/:id'</span>, {
+        controller <span class="symbol">:<span class="string">'postsController'</span></span>, templateUrl <span class="symbol">:<span class="string">'/views/posts.html'</span></span>
+      })
+      .otherwise({ redirectTo <span class="symbol">:</span> <span class="string">'/'</span> });
+    });
+          </code></pre>
+				</section>
+
+
+        <section style="top: -193.5px; display: none;" class="past" hidden="">
+          <h2>Directives</h2>
+          <blockquote>"Teach new tricks to the HTML"</blockquote>
+          <ol class="mt fragment visible" data-fragment-index="0">
+            <li>Create custom attributes</li>
+            <li>Create custom HTML tags<br><small>(based on W3C <i class="show-off">webcomponents</i> specification)</small></li>
+          </ol>
+				</section>
+
+        <section style="top: -273px; display: none;" class="past" hidden="">
+          <h2>Directives <small>2</small></h2>
+          <p>All the attributes that begin with <span class="show-off">"ng"</span> are AngularJS <span class="show-off">directives</span>.</p>
+          <ul class="mt fragment visible" data-fragment-index="0">
+            <li>ng-app</li>
+            <li>ng-controller</li>
+            <li>ng-model</li>
+            <li>ng-repeat</li>
+            <li>ng-click</li>
+            <li>ng-view</li>
+            <li>...</li>
+          </ul>
+				</section>
+
+        <section style="top: -313.5px; display: none;" class="past" hidden="">
+          <h2>Directives <small>3</small></h2>
+          <p>How to use <i>directives</i></p>
+          <pre ng-non-bindable="" class="mt"><code class="xml">
+      <span class="doctype">&lt;!doctype html&gt;</span>
+      <span class="tag">&lt;<span class="title">html</span> <span class="attribute">ng-app</span>=<span class="value">"myApp"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"../js/angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+          <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">ng-controller</span>=<span class="value">"myListController"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">li</span> <span class="attribute">ng-repeat</span>=<span class="value">"item in items"</span>&gt;</span>
+              {{ item.name }}
+            <span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+          <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+      <span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+          </code></pre>
+				</section>
+
+        <section style="top: -272px; display: none;" class="past" hidden="">
+          <h2>Directives <small>4</small></h2>
+          <p>You can also create you own <i>directive</i>.</p>
+          <ul class="mt fragment visible" data-fragment-index="0">
+            <li>
+              <strong>element</strong>: <span class="show-off">&lt;my-directive&gt;&lt;/my-directive&gt;</span>
+            </li>
+            <li class="mt">
+              <strong>atribute</strong>: <span class="show-off">&lt;span my-directive="value"&gt;&lt;/span&gt;<span class="show-off">
+            </span></span></li>
+            <li class="mt">
+              <strong>class</strong>: <span class="show-off">&lt;span class="my-directive: value;"&gt;&lt;/span&gt;<span class="show-off">
+            </span></span></li>
+            <li class="mt">
+              <strong>comment</strong>: <span class="show-off">&lt;!-- directive: my-directive value --&gt;<span class="show-off">
+            </span></span></li>
+          </ul>
+				</section>
+
+        <section style="top: -309.5px; display: none;" class="past" hidden="">
+          <h2>Directives <small>5</small></h2>
+          <pre ng-non-bindable=""><code class="php">
+    <span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>);
+
+    app.directive(<span class="string">'myDirective'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+      <span class="keyword">return</span> {
+        restrict: <span class="string">'EA'</span>,
+        link: <span class="function"><span class="keyword">function</span> <span class="params">(<span class="variable">$scope</span>, element)</span> {</span>
+          element.text(<span class="string">'Text from directive'</span>);
+        }
+      };
+    });
+          </code></pre>
+
+          <pre ng-non-bindable=""><code class="xml">
+    <span class="tag">&lt;<span class="title">my-directive</span>&gt;</span> <span class="tag">&lt;/<span class="title">my-directive</span>&gt;</span>  <span class="comment">&lt;!-- Directive as element --&gt;</span>
+
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">my-directive</span>&gt;</span> <span class="tag">&lt;/<span class="title">div</span>&gt;</span>       <span class="comment">&lt;!-- Directive as attribute --&gt;</span>
+          </code></pre>
+        </section>
+
+        <section style="top: -333px; display: none;" class="past" hidden="">
+          <h2>Directives <small>6</small></h2>
+          <pre ng-non-bindable=""><code class="php">
+    <span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>);
+
+    app.directive(<span class="string">'myDirective'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+      <span class="keyword">return</span> {
+        restrict: <span class="string">'E'</span>,
+        replace:  <span class="keyword">true</span>,
+        template: <span class="string">'&lt;h1 class="title"&gt;&lt;/h1&gt;'</span>
+        link: <span class="function"><span class="keyword">function</span> <span class="params">(<span class="variable">$scope</span>, element)</span> {</span>
+          element.text(<span class="string">'Text from directive'</span>);
+        }
+      };
+    });
+          </code></pre>
+
+          <pre ng-non-bindable=""><code class="xml">
+    <span class="tag">&lt;<span class="title">my-directive</span>&gt;</span> <span class="tag">&lt;/<span class="title">my-directive</span>&gt;</span>             <span class="comment">&lt;!-- Custom tag --&gt;</span>
+
+    <span class="tag">&lt;<span class="title">h1</span> <span class="attribute">class</span>=<span class="value">"title"</span>&gt;</span>Text from directive<span class="tag">&lt;/<span class="title">h1</span>&gt;</span> <span class="comment">&lt;!-- Replaced by the template --&gt;</span>
+          </code></pre>
+        </section>
+
+        <section style="top: -241.5px; display: block;" class="past" hidden="">
+          <h2>Testing your App</h2>
+          <p>A framework to be easily tested</p>
+          <div class="fragment mt visible" data-fragment-index="0">
+            <h4>Tools:</h4>
+            <ul class="mt">
+              <li><span class="show-off">Karma</span> <small>Test runner</small></li>
+              <li><span class="show-off">Jasmine</span> <small>Test framework</small></li>
+            </ul>
+          </div>
+        </section>
+
+        <section style="top: -273.5px; display: block;" class="past" hidden="">
+          <h2>Testing a controller</h2>
+          <pre ng-non-bindable=""><code class="php">
+  describe(<span class="string">'Testing Controller'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+    <span class="keyword">var</span> ctrl, scope;
+
+    beforeEach(angular.mock.module(<span class="string">'myApp'</span>));
+
+    beforeEach(inject(<span class="function"><span class="keyword">function</span> <span class="params">(<span class="variable">$controller</span>, <span class="variable">$rootScope</span>)</span> {</span>
+      scope = <span class="variable">$rootScope</span>.<span class="variable">$new</span>();
+      ctrl  = <span class="variable">$controller</span>(<span class="string">'myController'</span>, { <span class="variable">$scope</span>: scope });
+    }));
+
+    it(<span class="string">'should exist a controller called myController'</span>, function() {
+      expect(scope).not.toBeUndefined();
+    });
+  });
+          </code></pre>
+        </section>
+
+        <section style="top: -283.5px; display: block;" class="past" hidden="">
+          <h2>End-to-end Tests</h2>
+          <pre ng-non-bindable=""><code class="javascript">
+  describe(<span class="string">'Grocery list'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+    beforeEach(<span class="function"><span class="keyword">function</span> <span class="params">()</span> {</span>
+      browser().navigateTo(<span class="string">'/'</span>);
+    });
+
+    it(<span class="string">'filters the grocery list based on the search query'</span>, <span class="keyword">function</span>() {
+      expect(repeater(<span class="string">'.groceries li'</span>).count()).toBe(<span class="number">5</span>);
+
+      input(<span class="string">'query'</span>).enter(<span class="string">'b'</span>);
+      expect(repeater(<span class="string">'.groceries li'</span>).count()).toBe(<span class="number">3</span>);
+
+      input(<span class="string">'query'</span>).enter(<span class="string">'blueberry'</span>);
+      expect(repeater(<span class="string">'.groceries li'</span>).count()).toBe(<span class="number">1</span>);
+    });
+  });
+          </code></pre>
+        </section>
+
+        <section style="top: -188.5px; display: block;" class="present">
+					<h2>References</h2>
+          <ul>
+            <li>Angular - <a href="http://angularjs.org/" target="_blank">http://angularjs.org/</a></li>
+            <li>Karma   - <a href="http://karma-runner.github.io/" target="_blank">http://karma-runner.github.io/</a></li>
+            <li>Jasmine - <a href="http://pivotal.github.io/jasmine/" target="_blank">http://pivotal.github.io/jasmine/</a></li>
+            <li>HandsOn - <a href="https://github.com/vitorleal/angular-start.git" target="_blank">https://github.com/vitorleal/angular-start.git</a></li>
+          </ul>
+        </section>
+
+        <section class="future" style="top: -229.5px; display: block;" hidden="">
+					<h1>The End</h1>
+          <img class="img" alt="Vitor Leal" title="Vitor Leal" src="./WebApps with AngularJS_files/vitorleal.png">
+					<p>
+						<small>
+              <a href="http://vitorleal.com/" target="_blank">Vitor Leal</a> - Telefonica Brazil
+            </small>
+					</p>
+				</section>
+			</div>
+		<div class="backgrounds"><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background past"></div><div class="slide-background present"></div><div class="slide-background future"></div></div><div class="progress" style="display: block;"><span style="width: 1335.5357142857142px;"></span></div><aside class="controls" style="display: block;"><div class="navigate-left enabled"></div><div class="navigate-right enabled"></div><div class="navigate-up"></div><div class="navigate-down"></div></aside><div class="state-background"></div><div class="pause-overlay"></div></div>
+
+		<script src="./WebApps with AngularJS_files/head.min.js"></script>
+		<script src="./WebApps with AngularJS_files/reveal.min.js"></script>
+
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history : true,
+				center  : true,
+				theme       : Reveal.getQueryHash().theme,
+				transition  : Reveal.getQueryHash().transition || 'default',
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+		</script><script type="text/javascript" src="./WebApps with AngularJS_files/highlight.js"></script><script type="text/javascript" src="./WebApps with AngularJS_files/zoom.js"></script><script type="text/javascript" src="./WebApps with AngularJS_files/notes.js"></script>
+	
+
+</body></html>
